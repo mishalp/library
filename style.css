@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#list{
+    display: grid;
+    margin: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    
+
+}
+
+.title{
+    width: 5rem;
+    justify-self: start;
+    align-self: start;
+}
+
+.form > div{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.form{
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1.5fr);
+    justify-content: center;
+    padding: 2rem;
+    border: 1px solid black;
+}
+
+.form > *{
+    margin: 1rem;
+}
+
+.card{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 10rem;
+    padding: 1rem;
+}
