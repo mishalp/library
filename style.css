@@ -14,9 +14,10 @@
 }
 
 .title{
-    width: 5rem;
+    font-size: 3rem;
+    font-family: sans-serif;
     justify-self: start;
-    align-self: start;
+    align-self: center;
 }
 
 .inp{
@@ -29,6 +30,7 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(10rem, 350px));
     gap: 1rem;
+    justify-self: end;
 }
 
 .form{

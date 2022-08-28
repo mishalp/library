@@ -16,6 +16,10 @@ function addBook() {
    var author = document.getElementById('author').value;
    var pages = document.getElementById('pages').value;
     var isRead = document.getElementById('readit').value
+    if(title == '' || author == '' || pages == ''){
+        alert("fields Cannot be empty!!")
+        return;
+    }
     const book = new Book(title, author, pages, isRead);
     myLibrary.push(book);
     
