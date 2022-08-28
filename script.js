@@ -15,10 +15,14 @@ function addBook() {
    var title = document.getElementById('title').value;
    var author = document.getElementById('author').value;
    var pages = document.getElementById('pages').value;
-    var isRead = "readed";
+    var isRead = document.getElementById('readit').value
     const book = new Book(title, author, pages, isRead);
     myLibrary.push(book);
     
+    document.getElementById('title').value = ""
+    document.getElementById('author').value = ""
+    document.getElementById('pages').value = ""
+
     displayBook()
 }
 
@@ -27,7 +31,8 @@ function displayBook() {
     container.innerHTML =""
     myLibrary.forEach((book, data) => {
         let div = document.createElement('div');
-        var remove = document.createElement('button');
+        var remove = document.createElement('button')
+        var btnDiv = document.createElement('div');
         var read = document.createElement('button')
         read.classList.add('read')
         remove.classList.add('remove')
@@ -37,9 +42,10 @@ function displayBook() {
          book.index = data;
          remove.setAttribute('data-index', `${book.index}`)
          read.setAttribute('data-index', `${book.index}`)
-        div.innerHTML = `<h2>${book.title}</h2> by <h3>${book.author}</h3>`
-        div.appendChild(remove)
-        div.appendChild(read)
+        div.innerHTML = `<h2>${book.title}</h2> by <h3>${book.author}</h3><p>${book.pages} Pages`
+        btnDiv.appendChild(remove)
+        btnDiv.appendChild(read)
+        div.appendChild(btnDiv)
         container.appendChild(div);
     });
     btnListen()

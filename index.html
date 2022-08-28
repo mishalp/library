@@ -12,18 +12,27 @@
     <div class="form">
         <h1 class="title">Library</h1>
         <div>
-            Title
-            <input type="text" name="title" id="title">
+            <div class="inp">
+                Title
+                <input type="text" name="title" id="title">
+            </div>
+            <div class="inp">
+                Author
+                <input type="text" name="auhtor" id="author">
+            </div>
+            <div class="inp">
+                Pages
+                <input type="number" name="pages" id="pages">
+            </div>
+            <div class="inp">
+                did you read it?
+                <select name="readit" id="readit">
+                    <option value="readed" selected>Readed</option>
+                    <option value="Not readed">Not Readed</option>
+                </select>
+            </div>
+            <button class="add" onclick="addBook()">Add Book</button>
         </div>
-        <div>
-            author
-            <input type="text" name="auhtor" id="author">
-        </div>
-        <div>
-            pages
-            <input type="number" name="pages" id="pages">
-        </div>
-        <button onclick="addBook()">add</button>
     </div>
     <div id="list">
 
