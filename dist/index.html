@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="popup" class="hide">
+        <div class="popup-inner">
+          <div id="google-btn">
+              <div>
+                  <h1>SignIn with Google </h1>
+              </div><img src="./google.png" alt="">
+          </div>
+        </div>
+      </div>
     
     <div class="form">
         <h1 class="title">Library</h1>
@@ -31,13 +40,18 @@
                     <option value="Not readed">Not Readed</option>
                 </select>
             </div>
-            <button class="add" onclick="addBook()">Add Book</button>
+            <button class="add" id="add-book-btn">Add Book</button>
         </div>
+    </div>
+
+    <div id="profile">
+        <h3 id="name"></h3>
+        <button id="sign-out">Sign Out</button>
     </div>
     <div id="list">
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="bundle.js"></script>
 </body>
 </html>

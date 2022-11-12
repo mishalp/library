@@ -84,3 +84,59 @@ button{
     border-radius: .5rem;
     box-shadow: 0 3px 8px -2px gray;
 }
+
+#popup{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+  }
+
+  .hide{
+    visibility: hidden;
+  }
+  
+  .popup-inner{
+    position: relative;
+    padding: 4rem 4rem;
+    width: 70%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .6rem;
+    text-align: center;
+    font-family: sans-serif;
+  }
+
+  .popup-inner > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+  }
+
+  .popup-inner > div > div{
+    padding: 1rem;
+  }
+
+  .popup-inner > div > img{
+    max-width: 2.8rem;
+  }
+
+  #profile{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+#sign-out{
+    cursor: pointer;
+}

@@ -1,8 +1,26 @@
-const container = document.getElementById('list');
+import { addData, readData, updateData, removeData } from "./dataHandler";
+import { auth } from "../firebase";
+
+
+
+
+
+export const script = (()=>{
+    const container = document.getElementById('list');
 
 let myLibrary = [];
+auth.onAuthStateChanged((user)=>{
+    if(user){
+        readData()
+        .then((data)=>{
+            myLibrary = data;
+            console.log(data);
+            displayBook();
+        })
+    }
+})
+console.log('hii');
 
-displayBook();
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -11,7 +29,8 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-function addBook() {
+ const addBook = ()=>{
+    console.log('jii');
    var title = document.getElementById('title').value;
    var author = document.getElementById('author').value;
    var pages = document.getElementById('pages').value;
@@ -21,6 +40,7 @@ function addBook() {
         return;
     }
     const book = new Book(title, author, pages, isRead);
+    addData({...book})
     myLibrary.push(book);
     
     document.getElementById('title').value = ""
@@ -74,15 +94,21 @@ function btnListen(){
 
 function toggle(index, read){
     if(read == 'readed'){
-        myLibrary[index].read = "Not readed"
+        myLibrary[index].read = "Not readed";
+        updateData(myLibrary[index].id, "Not readed")
     }else{
-        myLibrary[index].read = "readed"
+        myLibrary[index].read = "readed";
+        updateData(myLibrary[index].id, "readed")
     }
     displayBook()
     
 }
 
 function removebtn(data){
+    removeData(myLibrary[data].id)
     myLibrary.splice(data,1);
      displayBook()
 }
+return { addBook }
+
+})()
