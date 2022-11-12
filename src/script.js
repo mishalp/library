@@ -1,4 +1,5 @@
-const container = document.getElementById('list');
+export const script = (()=>{
+    const container = document.getElementById('list');
 
 let myLibrary = [];
 
@@ -11,7 +12,7 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-function addBook() {
+ const addBook = ()=>{
    var title = document.getElementById('title').value;
    var author = document.getElementById('author').value;
    var pages = document.getElementById('pages').value;
@@ -86,3 +87,6 @@ function removebtn(data){
     myLibrary.splice(data,1);
      displayBook()
 }
+return { addBook }
+
+})()
