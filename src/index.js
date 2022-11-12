@@ -1,12 +1,8 @@
-import { script } from "./script";
 import { doGoogleSignup, doSignOut } from './googleAuth'
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { script } from "./script";
 
-
-//add book 
 document.getElementById('add-book-btn').addEventListener('click', script.addBook);
-
-
 
 onAuthStateChanged(getAuth(), (user) => {
     if (user) {
@@ -17,7 +13,7 @@ onAuthStateChanged(getAuth(), (user) => {
       document.getElementById('popup').classList.add('hide');
       document.getElementById('sign-out').addEventListener('click', doSignOut )
       document.getElementById('google-btn').removeEventListener('click', doGoogleSignup);
-      document.getElementById('name').innerHTML = user.displayName
+      document.getElementById('name').innerHTML = user.displayName;
       // ...
     } else {
       // User is signed out
@@ -29,6 +25,14 @@ onAuthStateChanged(getAuth(), (user) => {
       // ...
     }
   });
+
+
+
+
+//add book 
+
+
+
 
 
 
